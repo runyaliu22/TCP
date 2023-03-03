@@ -20,6 +20,12 @@ int main(int argc, char *argv[])
 
   const char* port_num = argv[1];//why in char array form?
   int num_players = stoi(argv[2]);
+  
+  if (num_players == 1 || num_players == 0){
+    perror("At least two players!");
+    exit(EXIT_FAILURE);
+  }
+  
   int num_hops = stoi(argv[3]);
 
   vector<int> player_server_port_number(num_players);
